@@ -1,20 +1,32 @@
-# Simple Calculator program by @berhocode
+# Simple Multitool Calculator program by @berhocode
+# Multicalc program
 
-# --- functions ---
+                    # --- basic calculator functions ---
 
 def calculator():
-    def additon():
+    def addition():
         print("Result: ", float(x) + float(y))
 
     def subtraction():
-            print("Result: ", float(x) - float(y))
+        print("Result: ", float(x) - float(y))
 
     def multiplication():
-            print("Result: ", float(x) * float(y))
+        print("Result: ", float(x) * float(y))
 
     def division():
+        if float(y) == 0 or float(x) == 0:
+            print("Error: Division by zero")
+        else:
             print("Result: ", float(x) / float(y))
-        
+            
+    # new functions added:
+
+    def modulus():
+        print("Result: ", float(x) % float(y))
+
+    def power():
+        print("Result: ", float(x) ** float(y))
+
     # --- calculator ---
 
     while True:
@@ -22,24 +34,27 @@ def calculator():
         x = input("> ")
         if x.upper() == "Q":
             program_name = "calculator"
-            print(f"exit {program_name} program...")
+            print(f"Exit {program_name} program...")
             break
-        print("Enter the operator (+,-,*,/)")
+        print("Enter the operator (+,-,*,/,%,**)")
         opr = input("> ")
         print("Enter the second number:")
         y = input("> ")
         if opr == "+":
-            additon()
+            addition()
         elif opr == "-":
             subtraction()
         elif opr == "*":
             multiplication()
         elif opr == "/":
             division()
+        elif opr == "%":
+            modulus()
+        elif opr == "**":
+            power()
         else:
-            print("Invalid inputs, Pls try again or type 'quit' to exit!")
+            print("Invalid input, please try again or type 'Q' to exit!")
         
-
 # kg to Lbs
 
 def kg_to_Lbs():
@@ -124,8 +139,11 @@ def C_to_F():
 while True:
     print("""---------
 *Choose* ~ *(Q)uit* :
-~ (C)alculator ~ Kg to Lbs (KB) ~ Celcius to Fahrenheit (CF)
-~ Odd or even (OE) ~ nbr digits (ND): 
+~ (C)alculator 
+~ Kg to Lbs (KB) 
+~ Celcius to Fahrenheit (CF)
+~ Odd or even (OE) 
+~ nbr digits (ND):
 ---------""")
     User_Choose = input("> ").upper()
     if User_Choose == "C":
@@ -141,6 +159,4 @@ while True:
     elif User_Choose == "Q":
         break
     else:
-        print("Invalid input, Pls try again...")
-
-
+        print(f"{User_Choose} is not available, Pls try again...")
