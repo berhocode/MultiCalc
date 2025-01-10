@@ -1,4 +1,4 @@
-# Simple Calculator program by @coderaymane
+# Simple Calculator program by @berhocode
 
 # --- functions ---
 
