@@ -132,6 +132,21 @@ def C_to_F():
             print(f"{temp_unit} or {temp} are invalids, Pls try again!")
 
 
+# Deg to rad
+def deg_to_rad():
+    pi = 3.141592653589793
+    while True:
+        degrees = input("Enter angle in degrees ~ (Q)uit: ")
+        if degrees.upper() == "Q":
+            program_name = "Deg to Rad"
+            print(f"Exit {program_name} program...")
+            break
+        if degrees.isdigit():  # Check if the input is numeric
+            radians = float(degrees) * (pi / 180)
+            print(f"{degrees} degrees is equal to {radians} radians.")
+        else:
+            print("Invalid input, please enter a numeric value or 'Q' to quit.")
+
 
 # --- Full program ---
 
@@ -143,7 +158,8 @@ while True:
 ~ Kg to Lbs (KB) 
 ~ Celcius to Fahrenheit (CF)
 ~ Odd or even (OE) 
-~ nbr digits (ND):
+~ nbr digits (ND)
+~ Deg to Rad (DR):
 ---------""")
     User_Choose = input("> ").upper()
     if User_Choose == "C":
@@ -156,6 +172,8 @@ while True:
         odd_or_even()
     elif User_Choose == "ND":
         num_digits()
+    elif User_Choose == "DR":
+        deg_to_rad()
     elif User_Choose == "Q":
         break
     else:
